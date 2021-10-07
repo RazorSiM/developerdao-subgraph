@@ -1,0 +1,20 @@
+type Developer @entity {
+  id: ID!
+  createdAt: BigInt!
+  transfersCount: BigInt!
+  owner: Owner! # owner of the NFT
+  os: String!
+  textEditor: String!
+  clothes: String!
+  language: String!
+  industry: String!
+  location: String!
+  mind: String!
+  vibe: String!
+  uri: String!
+}
+
+type Owner @entity {
+ id: ID!
+ developers: [Developer!]! @derivedFrom(field: "owner")
+}
